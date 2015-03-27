@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+   <head jsf:id="head">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/style.css"/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+	
+	<title>Document</title>
+</head>
+<header class="Header">
+	<h1 class="Header-h1">Juega y divierte en famila</h1>
+		<nav class="MainMenu">
+                <ul class="MainMenu-list">
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/registro.xhtml" class="MainMenu-link">Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/comoJugar.xhtml" class="MainMenu-link">Como Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/registro.xhtml" class="MainMenu-link" >Sugerencias</a>
+                    </li>
+                </ul>
+            </nav>
+            <h:panelGroup rendered="true">
+                <form jsf:id="LoginForm" class="Header-form">
+                    <h2>inicio sesion</h2>
+                    <h:panelGroup id="messagePanel" layout="block">
+                        <p:messages/>
+                    </h:panelGroup>
+                    <input jsf:id="user" type="text" placeholder="Usuario" jsf:value="#{loginController.username}" required="true" />
+                    <input jsf:id="password" type="password" placeholder="Contraseña" jsf:value="#{loginController.password}" required="true" />
+                    <br/>
+                    <input type="submit" value="Ingresar" jsf:action="#{loginController.login}">
+                    </input>                         
+                </form>
+            </h:panelGroup>
+
+		
+</header>
+ <section class="SectionPublicidad1">
+            <figure class="SectionPublicidad-figure">
+                <figcaption class="SectionPublicidad-figcaption">
+                    Este auto <br/>puede ser tuyo
+                </figcaption>
+                <img jsf:library="images/publicidad" jsf:name="kia.jpg" class="SectionPubli-imagen"/>
+                <h2 class="SectionPublicidad-figcaption">
+                    JUEGA <br/>Y <br/>GANA
+                </h2>
+            </figure>
+        </section>  
+	
+
+	<section class="SectionBienvenido">
+            <article>
+		<h1>Conozca las reglas del bingo</h1>
+		<p></p>
+	</article>
+		
+	</section>
+
+	  <section class="SectionPublicidad2">
+            <figure class="SectionPublicidad-figure">
+                <figcaption class="SectionPublicidad-figcaption">
+                    Esta moto <br/>puede ser tuya
+                </figcaption>
+                <img jsf:library="images/publicidad" jsf:name="fz.jpg" class="SectionPubli-imagen"/>
+                <h2 class="SectionPublicidad-figcaption">
+                    JUEGA <br/>Y <br/>GANA
+                </h2>
+            </figure>
+        </section>  
+
+<footer class="Footer " >
+           <figure class="Figure-logo">
+            <img jsf:library="images/logo" jsf:name="logop.png" class="Footer-logop"/>
+            </figure>
+            <section class="Div-footerMision">
+                <h3 class="H3-footer">MISIÓN</h3>
+                <P class="P-footer">La aplicación busca brindar espacios<br></br> de esparcimiento, confianza, seguridad,<br></br> y satisfacción 
+                a nuestros clientes, mediante<br></br> una plataforma virtual que le permita <br></br> a los usuarios interactuar de manera 
+                rápida <br></br> y segura a la hora de ingresar a BingoMiPueblo. </P>
+            </section >
+            <section class="Div-footerVision">
+                <h3 class="H3-footer">VISIÓN</h3>
+                <p class="P-footer">Para el 2024 ser reconocidos a nivel nacional como la<br></br> aplicación de juegos de azar mas seria,<br></br> en terminos de pago, 
+                    plataforma y servicios<br></br>  a nuestros usuarios. <br></br> 
+                <br></br>
+                <br></br></p> 
+            </section>
+            <div class="DivIcon-footer">
+            <a href="#" class="icon-tumblr"></a>
+            <a href="#" class="icon-facebook "> </a>
+            </div>
+        </footer>
+
+<body>
+	
+</body>
+</html>

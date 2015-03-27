@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog widgetVar="cambiarTelefonoDosDlg" modal="true" height="190" width="400">
+            <form jsf:id="cambiarTelefonoDosForm" class="Form-cambiarConfiguracion">
+                <h:panelGrid columns="1">
+                    <label for="telefonoInputText">Escribe tu nuevo telefono:</label>
+                    <input type="tel" jsf:id="telefonoInputText" 
+                                 jsf:requiredMessage="Por favor ingrese su numero telefonico"
+                                 jsf:validatorMessage="Ingrese un telefono valido solo debe contener numeros" 
+                                 jsf:value="#{usuarioController.usuarioActual.telefono2Usuario}"  maxlength="16" class="Form-inputRegistro">
+                        <f:validateRegex pattern="[0-9]*"/>
+                         <f:ajax execute="@this" render="telefonoMessage"/>
+                    </input>
+                    <h:message id="telefonoMessage" for="telefonoInputText" styleClass="errorConfiguracion"/>
+                </h:panelGrid>
+                <h:commandButton value="Cambiar" action="#{usuarioController.updateUsuario}" class="Form-botonCambiar"/>
+                <h:button value="Cancelar" outcome="/html_usuario_registrado/Ur_configuracionperfil" class="Form-botonCambiar" />
+            </form>
+        </p:dialog>
+    </ui:composition>
+</html>

@@ -1,0 +1,583 @@
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?vohorj');
+    src:url('fonts/icomoon.eot?#iefixvohorj') format('embedded-opentype'),
+        url('fonts/icomoon.woff?vohorj') format('woff'),
+        url('fonts/icomoon.ttf?vohorj') format('truetype'),
+        url('fonts/icomoon.svg?vohorj#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-left:before {
+	content: "\e609";
+}
+.icon-arrow-right:before {
+	content: "\e60a";
+}
+.icon-play:before {
+	content: "\e607";
+}
+.icon-pause:before {
+	content: "\e608";
+}
+.icon-home:before {
+    content: "\e600";
+}
+.icon-cog:before {
+    content: "\e602";
+}
+.icon-googleplus:before {
+    content: "\e603";
+}
+.icon-facebook:before {
+	content: "\e604";
+        color: yellow;
+        font-size:1em;
+        margin:  1em;
+        border-radius: 1em;
+        padding: .2em 1.2em;
+        background: #133783;
+        text-shadow:none;
+}
+
+.icon-tumblr:before {
+	content: "\e605";
+        color: yellow;
+        font-size:1em;
+        margin-right: .1em;
+        border-radius: 1em;
+        padding: .2em 1.2em;
+        background: #4099FF;
+        
+}
+.icon-world:before {
+    content: "\e601";
+}
+.active{
+	background: red;
+	display:block;
+	text-decoration: none;
+	
+
+}
+.DivSlider{
+	width: 50%;
+	background: yellow;
+	border: solid .1em red;
+        float: right
+}
+.Slider{
+
+	width:100%;
+}
+
+.Slider-img{
+	width:20em;
+        height: 25em;
+
+}
+.slidesjs-pagination{
+	background: red;
+	list-style: none;
+	padding: 0em;
+	margin-top: 0em;
+	text-decoration: none;
+}
+.slidesjs-pagination li a:hover{
+	background: #D00000;
+	
+}
+.slidesjs-pagination-item{
+	background: yellow;
+	float: left;
+	padding: .7em;
+}
+.slidesjs-navigation{
+	display: inline-block;
+	float: right;
+	background: yellow;
+	padding: .3em;
+	margin: .5em;
+	text-decoration: none;
+	
+}
+
+.Header{
+ background-color: white;
+ position: relative;
+}
+
+.Header-bienvenido{
+	color:blue;
+}
+
+.Header-form{
+	right: 0;
+	text-align: right;
+	
+
+}
+
+
+.Header-label{
+	display: inline-block;
+}
+
+.Header-input{
+	display: inline-block;
+}
+
+.Header-salir{
+	background-color: yellow;
+	padding: 0em 2em 0em 2em;
+	color:red;
+
+}
+
+.Header-title{
+  color:#D00000;
+  margin-top: 0.2em;
+  display: inline-block;
+  margin-left: 1em;
+
+}
+
+.MainMenu{
+	position:absolute;
+	right: 0;
+	top:0;
+}
+
+.MainMenu-item{
+	display:inline-block;
+}
+
+.MainMenu-link{
+	text-decoration: none;
+	background: #D00000;
+	padding: .75em;
+	color:white;
+}
+
+
+
+.SectionBienvenido, .SectionPublicidad1, .SectionPublicidad2{
+	
+	width: 33%;
+	text-align: center;
+	display: inline-block;
+	background-color: white;
+	height: 20em;
+	margin-top: 2.75em;
+
+	
+}
+
+.Form-mail{
+    
+}
+
+.SectionBienvenido-cargar{
+	background-color: red;
+	color: white;
+}
+
+.SectionBienvenido-jugar{
+	background-color: red;
+	color: white;
+	padding: 0.50em 1.5em;
+	font-size: 2em;
+}
+.Jugando-bingo{
+    background-image: url("images/logo/Bingo.png");
+    background-size: cover;
+    width: 5.5em;
+    height: 21em;
+    color: white;
+    font-size: 2em;
+   
+    
+}
+
+
+.SectionPubli-imagen{
+	width: 100%;
+}
+
+
+
+/*Footer*/
+a{
+    text-decoration: none;
+}
+
+.P-footer{
+    color:white;
+    font-family:'Open Sans';
+    font-weight: 100;
+}
+.Figure-logo{
+    display: inline-block;
+    float: right;
+}
+
+.Footer{
+	background-color: #D00000;
+	height: 20em;
+        margin-top: 2em;
+}
+
+
+.Footer-logop{
+	width: 25em;
+	float: right;
+        
+        
+}
+.DivIcon-footer{
+    margin-bottom: 1em;
+    float: right;
+    margin-right: 3em;
+    display: inline-block;
+  
+}
+
+.Div-footerMision{
+    display: inline-block;
+    margin-top: 5em;
+    margin-left: 8em;
+   
+}
+
+.Div-footerVision{
+    display: inline-block;
+    margin-top: 5em;
+    margin-left: 5em;  
+}
+.H3-footer{
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 100%;
+    line-height: 1.375em;
+    color: white;
+    border-bottom: 1px solid #E6E6E6;
+    
+}
+
+
+.icon-facebook:hover{    
+  -webkit-transition:2s;
+  -webkit-transform: rotatey(360deg);
+  background-color: white;
+}
+/*Footer*/
+
+
+.Modelo{
+   position: absolute;
+   display: inline-block;
+   
+}
+.Modelo-figure{
+    width:300px;
+    
+}
+.Modelo-figcaption{
+    
+}
+.Modelo-imagen{
+    width: 15em;
+    height: 28em;
+   
+}
+
+.Form-botton-index{
+    text-align: center;
+    position: relative;
+margin-top: 34em;
+}
+.Acumulado{
+    
+    text-align: center;
+    margin-top: 3em;   
+}
+.Acumulado-H2{
+     
+     
+    color:#D00000;
+     
+     font-size: 2em;
+     
+    
+}
+.Acmulado-button{
+     background: #D00000;
+     
+    color:white;
+     padding: .5em .5em;
+     font-size: 1.5em;
+     border-radius: 8px;
+    
+}
+.Acumulado-Valor{
+    color:#0431B4;
+     
+     font-size: 3em;
+    
+}
+.section-bingo{
+    text-align: center;
+}
+
+.BingoPleno{
+    border-radius: 1em;
+     border: solid #D20005;
+    display:inline-block;
+    width: 40%;
+    margin-left: 2em;
+    text-align: center;
+    margin-top: 4em;  
+}
+.BingoPleno-H2{
+    color:#D00000;
+    font-size: 2em;
+    
+}
+.BingoPleno-Valor{
+    color:#0431B4;
+    font-size: 3em;
+}
+.BingoPleno-Button{
+    background: #D00000;
+    color:white;
+    padding: .5em .5em;
+    font-size: 1.5em;
+    border-radius: 8px;
+    
+}
+.BingoSencillo{
+    border-radius: 1em;
+     border: solid #D20005;
+     display:inline-block;
+     width: 40%;
+     margin-left: 2em;
+     text-align: center;
+     margin-top: 4em;
+}
+.BingoSencillo-H2{
+    color:#D00000;
+    font-size: 2em;
+}
+.BingoSencillo-Valor{
+    color:#0431B4;
+    font-size: 3em;
+}
+.BingoSencillo-Button{
+    background: #D00000;
+    color:white;
+    padding: .5em .5em;
+    font-size: 1.5em;
+    border-radius: 8px;
+}
+.Botton-registro-index{
+  background-color: red;
+  color:white;
+  margin-right: 1em;
+  padding: .5em 1em;
+  font-size: 1.5em;
+  width: 203px;
+  
+}
+.Botton-jugar-index{
+    background-color: red;
+    color:white;
+     padding: .5em 1em;
+     font-size: 1.5em;
+}
+
+.Input-user-index{
+    margin-right: .5em;
+}
+
+.botton-ingresar-index{
+    margin-top: .5em;
+    background: yellow;
+    margin-right: .2em;
+}
+
+.section-registro{
+    width: 30%;
+    display: inline-block;
+    margin: 0;
+    
+}
+
+.Registro-formulario{
+    border:none;
+}
+
+.Form-registro{
+    
+    width: 30%;
+    margin: 0;
+    
+    color:black;
+    
+}
+.Inicio-botton{
+    text-align: center;
+    
+}
+.Guardar-botton{
+    text-align: center;
+    
+}
+.panel-registro{
+    color:black;
+    
+}
+
+      
+#page{
+width:455px;
+margin:0 auto;
+text-align: center;
+}
+
+td{
+font-family:arial;
+color:#333;
+padding:10px;
+width:50px;
+height:50px;
+text-align:center;
+border:.08em solid #0431B4;
+background-color:white;
+}
+
+
+
+.bingohead{
+border:10px solid #c2324c;
+}
+
+h1, h3, h3 a{
+	font-family:arial;
+	text-align:center;
+	padding:3px;
+	color:#211111;
+	
+	
+}
+
+td{
+cursor:pointer;
+}
+
+#free{
+	background-color:#fff;
+	color:#eee;
+	cursor:default;
+}
+.section-tablero{
+    display: inline-block;
+    border: 0;
+    padding: 0;
+}
+.Jugando{
+   display: inline-block;
+    margin: 0;
+    position: absolute;
+    top: 16.4em;
+    right: 0.5em;    
+}
+.Jugar{
+    text-align: center;
+}
+.section-balotero{
+    display: inline-block;
+    position: absolute;
+    left: 16.9em;
+    top: 16.3em;
+}
+
+.tablas{
+    display: inline-block;
+    margin-left: 1.5em;
+    margin-top: 1em;
+}
+.SelectTable-button{
+    background: #D00000;
+     border-radius: 8px;
+    color:white;
+     padding: .5em 1em;
+     font-size: 1.5em;
+}
+.SelectTable{
+    text-align: center;
+}
+.button-Cargar{
+    background: #D00000;
+     
+    color:white;
+    padding: .5em .5em;
+     font-size: 1.5em;
+     margin-right: .3em;
+     border-radius: 8px;
+}
+.button-jugar{
+    background: #D00000;
+     
+    color:white;
+     padding: .5em .5em;
+     font-size: 1.5em;
+     margin-right: .3em;
+     border-radius: 8px;
+}
+.button-Home{
+    background: #D00000;
+     
+    color:white;
+     padding: .5em .5em;
+     font-size: 1.5em;
+     border-radius: 8px;
+}
+.Generar-Carton{
+    text-decoration: none;
+     color:#0431B4;
+     font-size: 2em;
+    
+}
+.SelectTable-Title{
+    color:#0431B4;
+    font-size: 2em;
+    
+}
+.Balotero{
+    border: blue solid;
+    height: 10em;
+    width: 67.1em;
+    display: inline-block;
+    right: 0em;
+    position: absolute;
+    top: 5.9em;
+}
+
+/*estilos*
+http://www.youtube.com/watch?v=nVS56AgNhO0/
+/*http://es.learnlayout.com/media-queries.html*/

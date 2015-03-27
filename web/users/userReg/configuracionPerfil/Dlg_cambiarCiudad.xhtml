@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog widgetVar="cambiarCiudadDlg" modal="true" height="190" width="400">
+            <form jsf:id="cambiarCiudadForm" class="Form-cambiarConfiguracion">
+                <h:panelGrid columns="1">
+                    <label for="ciudadesInputText">Escribe tu ciudad de recidencia actual:</label>
+                    <p:autoComplete id="ciudadesInputText"  value="#{usuarioController.usuarioActual.ciudad}" required="true" 
+                                    requiredMessage="La ciuda debe registrarse" completeMethod="#{usuarioController.getListCiudadesAutocomplete}"
+                                    var="ciudades" itemLabel="#{ciudades}" itemValue="#{ciudades}"
+                                    converter="ciudadConverter"
+                                    forceSelection="true" maxResults="10"/>
+                    
+                    <h:message id="ciudadesMessage" for="ciudadesInputText" styleClass="errorConfiguracion"/>
+                </h:panelGrid>
+                <h:commandButton value="Cambiar" action="#{usuarioController.updateUsuario}" class="Form-botonCambiar"/>
+                <h:button value="Cancelar" outcome="/html_usuario_registrado/Ur_configuracionperfil" class="Form-botonCambiar" />
+            </form>
+        </p:dialog>
+    </ui:composition>
+</html>

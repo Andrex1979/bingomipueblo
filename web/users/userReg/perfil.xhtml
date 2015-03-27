@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <head jsf:id="head">
+        <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans' rel='stylesheet' type='text/css'/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+        
+        <title> REGISTRO </title>
+    </head>
+    <body jsf:id="body">
+        <header class="Header">
+            <h1 class="Header-title"> 
+                Juega y diviertete en familia
+            </h1>
+            <nav class="MainMenu">
+                <ul class="MainMenu-list">
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/registro.xhtml" class="MainMenu-link">Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/comoJugarUnReg.xhtml" class="MainMenu-link">Como Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/registro.xhtml" class="MainMenu-link" >Sugerencias</a>
+                    </li>
+                </ul>
+            </nav>
+          
+                <h:form id="LoginForm" class="Header-form">
+                   
+                    
+                    <input jsf:id="user" type="text" placeholder="Usuario" jsf:value="#{loginController.userLogueado}"  />
+                    <input type="submit" value="Salir"  class="Header-salir" jsf:action="#{loginController.logout}"></input>
+                                                                                 
+                </h:form>
+               
+          
+
+        </header>
+         <section class="SectionPublicidad1">
+            <figure class="SectionPublicidad-figure">
+                <figcaption class="SectionPublicidad-figcaption">
+                    Este auto <br/>puede ser tuyo
+                </figcaption>
+                <img jsf:library="images/publicidad" jsf:name="kia.jpg" class="SectionPubli-imagen"/>
+                <h2 class="SectionPublicidad-figcaption">
+                    JUEGA <br/>Y <br/>GANA
+                </h2>
+            </figure>
+        </section>  
+        
+
+        <section class="section-registro">
+            <form  jsf:id="createFormUsuario" class="Form-registro">
+                    <h:panelGrid columns="3">
+                            <h:outputLabel value="Nick Name:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.userName}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarNombresDlg').show();"  />
+                            
+                            <h:outputLabel value="Contraseña:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.password}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarContraseñaDlg').show();"  />
+                            
+                            <h:outputLabel value="Telefono 1:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.telefono1Usuario}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarTelefonoDlg').show();"  />
+                            
+                            <h:outputLabel value="Telefono 2:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.telefono2Usuario}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarTelefonoDosDlg').show();"  />
+                            
+                            <h:outputLabel value="E-mail:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.emailUsuario}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarCorreoDlg').show();"  />
+                            
+                            <h:outputLabel value="Dirección:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.direccionUsuario}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarDireccionDlg').show();"  />
+                            
+                            <h:outputLabel value="Ciudad:" class="Letra-labelConfiguracion"/>
+                            <h:outputLabel value="#{usuarioController.usuarioActual.ciudad}" />
+                            <h:commandButton value="Cambiar" type="button" onclick="PF('cambiarCiudadDlg').show();"  />
+                        </h:panelGrid>
+                    
+                </form>
+                <h:form>
+                    <input type="submit" jsf:action="#{usuarioController.prepareVolver}"  value="Inicio" class="Inicio-botton"> 
+                        </input>
+                </h:form>
+       </section>
+        <!-- <section class="SectionPublicidad2">
+            <figure class="SectionPublicidad-figure">
+                <figcaption class="SectionPublicidad-figcaption">
+                    Esta moto <br/>puede ser tuya
+                </figcaption>
+                <img jsf:library="images/publicidad" jsf:name="fz.jpg" class="SectionPubli-imagen"/>
+                <h2 class="SectionPublicidad-figcaption">
+                    JUEGA <br/>Y <br/>GANA
+                </h2>
+            </figure>
+        </section>  -->
+        
+       <footer class="Footer" >
+           <figure class="Figure-logo">
+            <img jsf:library="images/logo" jsf:name="logop.png" class="Footer-logop"/>
+            </figure>
+            <section class="Div-footerMision">
+                <h3 class="H3-footer">MISIÓN</h3>
+                <P class="P-footer">La aplicación busca brindar espacios<br></br> de esparcimiento, confianza, seguridad,<br></br> y satisfacción 
+                a nuestros clientes, mediante<br></br> una plataforma virtual que le permita <br></br> a los usuarios interactuar de manera 
+                rápida <br></br> y segura a la hora de ingresar a BingoMiPueblo. </P>
+            </section >
+            <section class="Div-footerVision">
+                <h3 class="H3-footer">VISIÓN</h3>
+                <p class="P-footer">Para el 2024 ser reconocidos a nivel nacional como la<br></br> aplicación de juegos de azar mas seria,<br></br> en terminos de pago, 
+                    plataforma y servicios<br></br>  a nuestros usuarios. <br></br> 
+                <br></br>
+                <br></br></p> 
+            </section>
+            <div class="DivIcon-footer">
+            <a href="#" class="icon-tumblr"></a>
+            <a href="#" class="icon-facebook "> </a>
+            </div>
+        </footer>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarNombres.xhtml"/>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarContraseña.xhtml"/>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarTelefono.xhtml"/>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarTelefonoDos.xhtml"/>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarCorreo.xhtml"/>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarDireccion.xhtml"/>
+        <ui:include src="/users/userReg/configuracionPerfil/Dlg_cambiarCiudad.xhtml"/>
+    </body>
+    
+</html>

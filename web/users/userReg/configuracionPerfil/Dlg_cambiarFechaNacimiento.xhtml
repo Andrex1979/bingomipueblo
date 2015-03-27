@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog widgetVar="cambiarFechaNacimientoDlg" modal="true" height="190" width="400">
+            <form jsf:id="cambiarFechaNacimientoDlgForm" class="Form-cambiarConfiguracion">
+                <h:panelGrid columns="1">
+                    <label  for="fechaInputText">Fecha de Nacimiento:</label>
+                    <input  type="date" 
+                            jsf:id="fechaNacimientoUsuario" 
+                            required="true" class="Form-inputRegistro"
+                            min="1914-01-01"
+                            max="2000-12-31"
+                            jsf:validator="#{loginController.validarEdad}"
+                            jsf:requiredMessage="Ingresa tu fecha de nacimiento" 
+                            jsf:value="#{usuarioController.usuarioActual.fechaNacimiento}">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                    <f:ajax execute="fechaNacimientoUsuario" 
+                            render="msgFechaNacimientoUsuario"/>
+                    <f:ajax execute="fechaNacimientoUsuario" 
+                            render="msgFechaNacimientoUsuario"
+                            event="blur"/>
+                    </input>
+                    <h:message id="msgFechaNacimientoUsuario" for="fechaNacimientoUsuario"  styleClass="errorConfiguracion"/>
+                </h:panelGrid>
+                <h:commandButton value="Cambiar" action="#{usuarioController.updateUsuarios}" class="Form-botonCambiar"/>
+                <h:button value="Cancelar" outcome="/html_usuario_registrado/Ur_configuracionperfil" class="Form-botonCambiar" />
+            </form>
+        </p:dialog>
+    </ui:composition>
+</html>

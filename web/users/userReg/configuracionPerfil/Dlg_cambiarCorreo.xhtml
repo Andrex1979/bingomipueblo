@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog widgetVar="cambiarCorreoDlg" modal="true" height="190" width="400">
+            <form jsf:id="cambiarCorreoForm" class="Form-cambiarConfiguracion">
+                <h:panelGrid columns="1">
+                    <label for="correoInputText">Escribe tu nueva direccion de correo electronico:</label>
+                    <input type="email" jsf:id="correoInputText" 
+                           jsf:value="#{usuarioController.usuarioActual.emailUsuario}" maxlength="30"  class="Form-inputRegistro"
+                                
+                                 jsf:validatorMessage="Dirección de correo electronico no valido">
+                        <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]*" class="validator"/>
+                        <f:ajax execute="@this" render="correoMessage"/>
+                    </input>
+                    <h:message id="correoMessage" for="correoInputText" styleClass="errorConfiguracion"/>
+                </h:panelGrid>
+                <h:commandButton value="Cambiar" action="#{usuarioController.updateUsuario}" class="Form-botonCambiar"/>
+                <h:button value="Cancelar" outcome="/html_usuario_registrado/Ur_configuracionperfil" class="Form-botonCambiar" />
+            </form>
+        </p:dialog>
+    </ui:composition>
+</html>

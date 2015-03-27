@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog widgetVar="cambiarContraseñaDlg" modal="true" height="190" width="400">
+            <form jsf:id="cambiarContraseñaForm" class="Form-cambiarConfiguracion">
+                <h:panelGrid columns="1">
+                    <label for="contraUsuarioInputText">Escribe tu nueva contraseña:</label>
+                    <input type="password" jsf:id="contraUsuarioInputText" required="true"
+                                 jsf:validatorMessage="Ingrese una contraseña valida debe contener minimo 6 caracteres"
+                                 jsf:requiredMessage="Por favor ingrese una contraseña"
+                                 jsf:value="#{usuarioController.usuarioActual.password}" maxlength="10"  class="Form-inputRegistro">
+                        <f:validateRegex pattern="((?=.*[a-z]).{6,})*" />
+                        <f:ajax execute="@this" render="contraUsuarioMessage"/>
+                    </input>
+                    <h:message id="contraUsuarioMessage" for="contraUsuarioInputText" styleClass="errorConfiguracion"/>
+                </h:panelGrid>
+                <h:commandButton value="Cambiar" action="#{usuarioController.updateUsuarios}" class="Form-botonCambiar"/>
+                <h:button value="Cancelar" outcome="/html_usuario_registrado/Ur_configuracionperfil" class="Form-botonCambiar" />
+            </form>
+        </p:dialog>
+    </ui:composition>
+</html>

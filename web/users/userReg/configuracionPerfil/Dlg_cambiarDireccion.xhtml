@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+        <p:dialog widgetVar="cambiarDireccionDlg" modal="true" height="190" width="400">
+            <form jsf:id="cambiarDireccionForm" class="Form-cambiarConfiguracion">
+                <h:panelGrid columns="1">
+                    <label for="apellido1InputText">Escribe tu nueva dirección:</label>
+                    <input type="text" jsf:id="direccionInputText" required="true"
+                                 jsf:requiredMessage="Por favor ingrese la nueva dirección"
+                                 jsf:validatorMessage="Use solo letras y números, ej: Calle 2a 6 23" 
+                                 jsf:value="#{usuarioController.usuarioActual.direccionUsuario}" maxlength="45"  class="Form-inputRegistro">
+                            <f:validateRegex pattern="[a-zA-Z0-9 ]*"/>
+                            <f:ajax execute="@this" render="apellido1Message"/>
+                    </input>
+                    <h:message id="apellido1Message" for="apellido1InputText" styleClass="errorConfiguracion"/>
+                </h:panelGrid>
+                <h:commandButton value="Cambiar" action="#{usuarioController.updateUsuario}" class="Form-botonCambiar"/>
+                <h:button value="Cancelar" outcome="/html_usuario_registrado/Ur_configuracionperfil" class="Form-botonCambiar" />
+            </form>
+        </p:dialog>
+    </ui:composition>
+</html>

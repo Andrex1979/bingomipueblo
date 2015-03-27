@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <head jsf:id="head">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">"default title</ui:insert></title>
+        <h:outputStylesheet name="style.css" library="css"/>
+        <h:outputStylesheet name="default.css" library="css"/>
+        <h:outputStylesheet name="cssLayout.css" library="css"/>
+       
+        <link rel="icon" type="image/png" href="resources/images/favicon/favicon.ico" /><!--icono en la barra-->
+    </head>
+
+     <body jsf:id="body">
+        <header class="Header">
+            <h1 class="Header-title"> 
+                Juega y diviertete en familia
+            </h1>
+            <nav class="MainMenu">
+                <ul class="MainMenu-list">
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/userReg/selectGame.xhtml" class="MainMenu-link">Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/comoJugar.xhtml" class="MainMenu-link">Como Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/userReg/sugerencias.xhtml" class="MainMenu-link" >Sugerencias</a>
+                    </li>
+                </ul>
+            </nav>
+            <!--<form class="Header-form">
+                <label>correo</label>
+                <input type="text" placeholder="Correo"/>
+                <label>Contraseña</label>
+                <input type="password" placeholder="Contraseña"/>
+                <input type="submit" value="Entrar"/>
+                <a href="#">Olvide mi contraseña</a>
+            </form>-->
+        </header>
+
+        <section>
+            <ui:insert name="body">Default body</ui:insert>
+        </section>
+
+        <footer class="Footer " >
+           <figure class="Figure-logo">
+            <img jsf:library="images/logo" jsf:name="logop.png" class="Footer-logop"/>
+            </figure>
+            <section class="Div-footerMision">
+                <h3 class="H3-footer">MISIÓN</h3>
+                <P class="P-footer">La aplicación busca brindar espacios<br></br> de esparcimiento, confianza, seguridad,<br></br> y satisfacción 
+                a nuestros clientes, mediante<br></br> una plataforma virtual que le permita <br></br> a los usuarios interactuar de manera 
+                rápida <br></br> y segura a la hora de ingresar a BingoMiPueblo. </P>
+            </section >
+            <section class="Div-footerVision">
+                <h3 class="H3-footer">VISIÓN</h3>
+                <p class="P-footer">Para el 2024 ser reconocidos a nivel nacional como la<br></br> aplicación de juegos de azar mas seria,<br></br> en terminos de pago, 
+                    plataforma y servicios<br></br>  a nuestros usuarios. <br></br> 
+                <br></br>
+                <br></br></p> 
+            </section>
+            <div class="DivIcon-footer">
+            <a href="#" class="icon-tumblr"></a>
+            <a href="#" class="icon-facebook "> </a>
+            </div>
+        </footer>
+
+        <form jsf:id="confirmForm">
+            <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+                <p:commandButton value="SI" type="button" styleClass="ui_confirmdialog-ye" icon="ui-icon-check"/>
+                <p:commandButton value="SI" type="button" styleClass="ui_confirmdialog-no" icon="ui-icon-close" />
+            </p:confirmDialog>
+        </form>
+    </body>
+
+</html>

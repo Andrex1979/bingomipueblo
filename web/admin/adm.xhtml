@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    <head jsf:id="head">
+        <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans' rel='stylesheet' type='text/css'/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+        
+        <title> REGISTRO </title>
+    </head>
+    <body jsf:id="body">
+        <header >
+           
+           
+
+        </header>
+        
+        
+
+        <section class="section-registro">
+            <form  jsf:id="createFormUsuario" class="Form-registro">
+                    <h1><label value="Create/Edit Usuario"/></h1>
+                    
+                    <h:panelGrid columns="3" class="panel-registro" columnClasses="Registro-formulario">
+
+                        <label value="rol" jsf:for="rol" />
+                        <h:selectManyCheckbox id="rol" value="#{usuarioController.listaRoles}" layout="grid" 
+                                              pt:required="true" 
+                                              converter="rolConverter"
+                                              requiredMessage="Requerido">  
+                            <f:selectItems value="#{usuarioController.listaRolSelectOne}"/>
+                            <f:ajax execute="@this" render="rolMessage"/>
+                        </h:selectManyCheckbox> 
+                        <p:message id="rolMessage" for="rol"/>
+
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_idTipoDocumento}" jsf:for="idTipoDocumento" />
+                        <h:selectOneMenu id="idTipoDocumento" pt:required="true"
+                                         value="#{usuarioController.usuarioActual.idTipoDocumento}" 
+                                         title="#{bundle.CreateUsuarioTitle_idTipoDocumento}"  
+                                         requiredMessage="#{bundle.CreateEditClienteRequiredMessage_idTipoDocumento}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMesagge}" />
+                            <f:selectItems value="#{usuarioController.listaTipoDocumentoSelectOne}"/>
+                        </h:selectOneMenu>
+                        <p:message id="idTipoDocumentoMessage" for="idTipoDocumento"/> 
+
+                        <label value="#{bundle.CreateUsuarioTitle_numeroDocumento}" jsf:for="numeroDocumento" />
+                        <input type="text" jsf:id="numeroDocumento" validatorMessage="Inserte solo numeros" 
+                               jsf:value="#{usuarioController.usuarioActual.numeroDocumento}" 
+                               title="#{bundle.CreateUsuarioTitleMessage_numeroDocumento}" 
+                               required="true" maxlength="12" jsf:validator="#{usuarioController.validarDocumento}"                              
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_numeroDocumento}">
+                            <f:validateRegex pattern="[0-9]*"/>
+                            <f:ajax execute="@this" render="numeroDocumentoMessage"/>
+                        </input>
+                        <p:message id="numeroDocumentoMessage" for="numeroDocumento"/>
+
+                        <label value="#{bundle.CreateUsuarioLabel_primerNombreUsuario}" jsf:for="primerNombreUsuario" />
+                        <input type="text" jsf:id="primerNombreUsuario" 
+                               jsf:value="#{usuarioController.usuarioActual.primerNombreUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_primerNombreUsuario}" 
+                               required="true" maxlength="45" 
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_primerNombreUsuario}"
+                               jsf:validatorMessage="#{bundle.CreateEditUsuarioValidatorMessage_PrimerNombreUsuario}">
+                            <f:validateRegex pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*"/>
+                            <f:ajax execute="@this" render="primerNombreUsuarioMessage"/>
+                        </input>
+                        <p:message id="primerNombreUsuarioMessage" for="primerNombreUsuario"/>
+
+                        <label value="#{bundle.CreateUsuarioLabel_segundoNombreUsuario}" jsf:for="segundoNombreUsuario" />
+                        <input type="text" jsf:id="segundoNombreUsuario" 
+                               jsf:value="#{usuarioController.usuarioActual.segundoNombreUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_segundoNombreUsuario}" 
+                               maxlength="45" 
+                               jsf:validatorMessage="#{bundle.CreateEditUsuarioValidatorMessage_PrimerNombreUsuario}">
+                            <f:validateRegex pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*"/>
+                            <f:ajax execute="@this" render="segundoNombreUsuarioMessage"/>
+                        </input>
+                        <p:message id="segundoNombreUsuarioMessage" for="segundoNombreUsuario"/>
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_primerApellidoUsuario}" jsf:for="primerApellidoUsuario" />
+                        <input type="text" jsf:id="primerApellidoUsuario" 
+                               jsf:value="#{usuarioController.usuarioActual.primerApellidoUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_primerApellidoUsuario}" 
+                               required="true" maxlength="45"
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_primerApellidoUsuario}"
+                               jsf:validatorMessage="#{bundle.CreateEditUsuarioValidatorMessage_PrimerApellidoUsuario}">
+                            <f:validateRegex pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*"/>
+                            <f:ajax execute="@this" render="primerApellidoMessage"/>
+                        </input>
+                        <p:message id="primerApellidoMessage" for="primerApellidoUsuario"/>
+
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_segundoApellidoUsuario}" jsf:for="segundoApellidoUsuario" />
+                        <input type="text" jsf:id="segundoApellidoUsuario" 
+                               jsf:value="#{usuarioController.usuarioActual.segundoApellidoUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_segundoApellidoUsuario}" 
+                               maxlength="45"
+                               jsf:validatorMessage="#{bundle.CreateEditUsuarioValidatorMessage_PrimerApellidoUsuario}">
+                            <f:validateRegex pattern="[a-zA-Z áéíóúÁÉÍÓÚÑñ]*"/>
+                            <f:ajax execute="@this" render="segundoApellidoMessage"/>
+                        </input>
+                        <p:message id="segundoApellidoMessage" for="segundoApellidoUsuario"/>
+
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_idSexo}" jsf:for="idSexo" />
+                        <h:selectOneMenu id="idSexo" pt:required="true"
+                                         value="#{usuarioController.usuarioActual.idSexo}" 
+                                         title="#{bundle.CreateUsuarioTitle_idSexo}" required="true" 
+                                         requiredMessage="#{bundle.CreateUsuarioRequiredMessage_idSexo}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMesagge}" />
+                            <f:selectItems value="#{usuarioController.listaGenerosSelectOne}"/>
+                        </h:selectOneMenu>
+                        <p:message id="idGeneroMessage" for="idSexo"/>
+
+                        <label value="#{bundle.CreateUsuarioLabel_fechaNacimientoUsuario}" jsf:for="fechaNacimiento" />
+                        <input type="date" jsf:id="fechaNacimiento" 
+                               jsf:value="#{usuarioController.usuarioActual.fechaNacimientoUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_fechaNacimientoUsuario}" 
+                                jsf:validator="#{usuarioController.validarEdad}"
+                               required="true" 
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_fechaNacimientoUsuario}">
+                            <f:convertDateTime pattern="yyyy-MM-dd" />
+                            <f:ajax execute="@this" render="fechaNacimientoMessage"/>
+                        </input>
+                        <p:message id="fechaNacimientoMessage" for="fechaNacimiento"/>
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_userName}" jsf:for="nombreUsuario" />
+                        <input type="text" jsf:id="nombreUsuario" 
+                               jsf:value="#{usuarioController.usuarioActual.userName}" 
+                               title="#{bundle.CreateUsuarioTitle_userName}" 
+                               required="true" maxlength="45"
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_userName}">
+                            <f:ajax execute="@this" render="nombreUsuarioMessage"/>
+                        </input>
+                        <p:message id="nombreUsuarioMessage" for="nombreUsuario"/>
+
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_emailUsuario}" jsf:for="email" />
+                        <input type="email" jsf:id="email"
+                               jsf:value="#{usuarioController.usuarioActual.emailUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_emailUsuario}"
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_emailUsuario}">
+                              
+                            <f:ajax execute="@this" render="emailMessage"/>
+                        </input>
+                        <p:message id="emailMessage" for="email"/>                        
+
+                        <label value="#{bundle.CreateUsuarioLabel_password} *" jsf:for="password " />
+                        <p:password  id="password" validatorMessage="Las contraseñas no son iguales."
+                                     value="#{usuarioController.usuarioActual.password}" 
+                                     title="#{bundle.CreateUsuarioTitle_password}" 
+                                    match="pwd2"  pt:required="true"  
+                                    requiredMessage="#{bundle.CreateUsuarioRequiredMessage_password}">
+                            <f:ajax execute="@this" render="passwordMessage password2Message"/>
+                        </p:password>
+                      
+                        <p:message id="passwordMessage" for="password"/>
+
+
+                        <h:outputLabel for="pwd2" value="Repetir contraseña: *" />
+                        <p:password id="pwd2" value="#{usuarioController.usuarioActual.password}" label="Password 2" 
+                                     pt:required="true"
+                                    requiredMessage="#{bundle.CreateUsuarioRequiredMessage_password}">
+                            <f:ajax execute="@this password" render="passwordMessage password2Message"/>
+                        </p:password>
+                        <p:message id="password2Message" for="pwd2"/>
+
+                        
+                        <label value="#{bundle.CreateUsuarioLabel_telefono1Usuario}" jsf:for="telefono1Usuario" />
+                        <input type="tel" jsf:id="telefono1Usuario" 
+                               jsf:value="#{usuarioController.usuarioActual.telefono1Usuario}" 
+                               title="#{bundle.CreateUsuarioTitle_telefono1Usuario}" 
+                               required="true" 
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_telefono1Usuario}">
+                            <f:validateRegex pattern="[0-9]*"/>
+                            <f:ajax execute="@this" render="telefono1Message"/>
+                        </input>
+                        <p:message id="telefono1Message" for="telefono1Usuario"/>
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_telefono2Usuario}" jsf:for="telefono2Usuario" />
+                        <input type="tel" jsf:id="telefono2Usuario" 
+                               jsf:value="#{usuarioController.usuarioActual.telefono2Usuario}" 
+                               title="#{bundle.CreateUsuarioTitle_telefono2Usuario}">
+                            <f:validateRegex pattern="[0-9]*"/>
+                            <f:ajax execute="@this" render="telefonoMessage"/>
+                        </input>
+                        <p:message id="telefonoMessage" for="telefono2Usuario"/>
+
+
+                        <label value="#{bundle.CreateUsuarioLabel_direccionUsuario}" jsf:for="direccion" />
+                        <input type="text" jsf:id="direccion" 
+                               jsf:value="#{usuarioController.usuarioActual.direccionUsuario}" 
+                               title="#{bundle.CreateUsuarioTitle_direccionUsuario}" 
+                               required="true" 
+                               jsf:requiredMessage="#{bundle.CreateUsuarioRequiredMessage_direccionUsuario}."
+                               jsf:validatorMessage="#{bundle.CreateEditUsuarioValidatorMessage_direccion}">
+                            <f:validateRegex pattern="[a-zA-Z0-9 ]*"/>
+                            <f:ajax execute="@this" render="direccionMessage"/>
+                        </input>
+                        <p:message id="direccionMessage" for="direccion"/>                        
+
+                        <label value="#{bundle.CreateUsuarioLabel_ciudad}" jsf:for="ciudad" />
+                        <p:autoComplete id="ciudad" value="#{usuarioController.usuarioActual.ciudad}" 
+                                        required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_ciudad}"
+                                        completeMethod="#{usuarioController.getListCiudadesAutocomplete}" 
+                                        var="ciudad" itemLabel="#{ciudad}" itemValue="#{ciudad}" 
+                                        converter="ciudadConverter" pt:required="true"
+                                        forceSelection="true" maxResults="10"/> 
+                        <p:message id="ciudadMessage" for="ciudad"/>
+
+
+                        <input type="submit" jsf:action="#{usuarioController.addUsuario}"  value="Guardar" class="Guardar-botton"> 
+                        </input>
+                
+                        
+                    </h:panelGrid>
+                    
+                    
+                </form>
+                
+        </section>
+        
+        <h:form>
+               
+                <h:button value="Volver" outcome="/admin/Administrador.xhtml" class="button-Home"/> 
+                
+            </h:form>
+       
+        
+        
+       <footer>
+        
+        </footer>
+    </body>
+</html>
+

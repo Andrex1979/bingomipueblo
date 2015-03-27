@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+        <head jsf:id="head">
+        <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans' rel='stylesheet' type='text/css'/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+        <h:outputStylesheet name="default.css" library="css"/>
+        <h:outputStylesheet name="cssLayout.css" library="css"/>
+        
+        <title>List </title>
+    </head>
+        <body jsf:id="body">
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                
+                <p:dataTable  value="#{usuarioController.listaUsuario}"  var="item"  >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Estado"/>
+                        </f:facet>
+                        <h:outputText value="#{item.estado}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Numero Documento"/>
+                        </f:facet>
+                        <h:outputText value="#{item.numeroDocumento}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdTipoDocumento"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idTipoDocumento.descrpTipoDocumento}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Primer Nombre Usuario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.primerNombreUsuario}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Segundo Nombre Usuario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.segundoNombreUsuario}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Primer Apellido Usuario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.primerApellidoUsuario}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Segundo Apellido Usuario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.segundoApellidoUsuario}"/>
+                    </p:column>
+                    
+                   <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdSexo"/>
+                        </f:facet>
+                       <h:outputText value="#{item.idSexo.descrpSexo}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="User Name"/>
+                        </f:facet>
+                        <h:outputText value="#{item.userName}"/>
+                    </p:column>
+                    
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Fecha Creacion Usuario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechacreacionusuario}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Ciudad"/>
+                        </f:facet>
+                        <h:outputText value="#{item.ciudad}"/>
+                    </p:column>
+                    <p:column>
+                            
+                        <p:commandButton icon="ui-icon-pencil" action="#{usuarioController.prepareEdit}">
+                            <f:setPropertyActionListener value="#{item}" target="#{usuarioController.usuarioActual}"/>
+                            </p:commandButton>
+                        </p:column>
+                    
+                </p:dataTable>
+            </h:form>
+        </f:view>
+            <footer class="Footer " >
+           <figure class="Figure-logo">
+            <img jsf:library="images/logo" jsf:name="logop.png" class="Footer-logop"/>
+            </figure>
+            <section class="Div-footerMision">
+                <h3 class="H3-footer">MISIÓN</h3>
+                <P class="P-footer">La aplicación busca brindar espacios<br></br> de esparcimiento, confianza, seguridad,<br></br> y satisfacción 
+                a nuestros clientes, mediante<br></br> una plataforma virtual que le permita <br></br> a los usuarios interactuar de manera 
+                rápida <br></br> y segura a la hora de ingresar a BingoMiPueblo. </P>
+            </section >
+            <section class="Div-footerVision">
+                <h3 class="H3-footer">VISIÓN</h3>
+                <p class="P-footer">Para el 2024 ser reconocidos a nivel nacional como la<br></br> aplicación de juegos de azar mas seria,<br></br> en terminos de pago, 
+                    plataforma y servicios<br></br>  a nuestros usuarios. <br></br> 
+                <br></br>
+                <br></br></p> 
+            </section>
+            <div class="DivIcon-footer">
+            <a href="#" class="icon-tumblr"></a>
+            <a href="#" class="icon-facebook "> </a>
+            </div>
+        </footer>
+
+     </body>
+    
+</html>
+

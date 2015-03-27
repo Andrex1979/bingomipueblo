@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head jsf:id="head">
+        <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans' rel='stylesheet' type='text/css'/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+
+        <h:outputScript library="js" name="jquery.min.js"></h:outputScript>
+        <h:outputScript library="js" name="script.js"></h:outputScript>
+
+
+        <title>selectTable</title>
+    </head>
+    <body>
+        <header class="Header">
+
+            <h1 class="Header-title">
+                Juega y diviertete en familia
+            </h1>
+            <nav class="MainMenu">
+                <ul class="MainMenu-list">
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/userReg/selectGame.xhtml" class="MainMenu-link">Cambiar Sala</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/unReg/comoJugar.xhtml" class="MainMenu-link">Como Jugar</a>
+                    </li>
+                    <li class="MainMenu-item">
+                        <a jsf:outcome="/users/userReg/sugerencias.xhtml" class="MainMenu-link" >Sugerencias</a>
+                    </li>
+                </ul>
+            </nav>
+            <h:form class="Header-form">
+                <label class="Header-label">Usuario: </label>
+                <input type="text" class="Header-input" jsf:value="#{loginController.userLogueado}" disabled="true"/>
+                <label class="Header-label">Saldo:</label>
+                <input type="text" class="Header-input"/>
+                <input type="submit" value="Salir" class="Header-salir" jsf:action="#{loginController.logout}"/>
+            </h:form>
+        </header>
+        <section class="Tiempo3">
+
+
+
+
+        </section>
+        <section class="SelectTable">
+            <div id="page">
+                <h1 class="SelectTable-Title">Cartones de Bingo</h1>
+                <table id="seleccion" value="#{JuegoController.tablas}">
+                    <tr>
+                        <td><table id="seleccion" value="#{num}"></table> </td> <td> </td> <td> </td>
+                    </tr>
+                
+                </table>
+
+                <p:dataGrid columns="3" value="#{JuegoController.tablas}" var="num" id="tablas">
+
+                    <p:dataGrid columns="5"  value="#{num}" var="num"  >
+                        <f:facet name="header">
+                            <p:panelGrid columns="5">
+
+                                <p:column style="width: 20px">B</p:column>
+                                <p:column style="width: 20px">I</p:column>
+                                <p:column style="width: 20px">N</p:column>
+                                <p:column style="width: 20px">G</p:column>
+                                <p:column style="width: 20px">O</p:column>
+
+                            </p:panelGrid>
+                        </f:facet>
+                        <h:outputText style="width: 20px" value="Bingo" rendered="#{num==0}"/>
+                        <h:outputText style="width: 20px" value="#{num}" rendered="#{num!=0}"/>
+                    </p:dataGrid>
+                </p:dataGrid>
+            </div>
+
+            <h3><p:commandButton value="Generar Cartones" update="tablas"/></h3>
+            <button type="submit" class="SelectTable-button">Seleccionar</button>
+        </section>
+       ////// <h:form> <h:commandButton value="seleccionar"
+                                  actionListener="#{JuegoController.tselecion}"
+                                  action="tablas"/>
+        </h:form>
+       
+       <ui:repeat var="item" varStatus="status" value="#{JuegoController.miLista}">  
+	   valor: #{item}<br/>  
+	   Posición: #{status.index}<br/>  
+        </ui:repeat> ////////
+        <section class="Jugar">
+
+            <h:form>
+                <h:button value="Cargar Cuenta" class="button-Cargar" /> 
+                <h:button value="Jugar" outcome="/users/userReg/game.xhtml" class="button-jugar"/> 
+                <h:button value="Home" outcome="/users/userReg/bienvenido.xhtml" class="button-Home"/> 
+
+            </h:form>
+
+        </section>
+
+        <footer class="Footer " >
+            <figure class="Figure-logo">
+                <img jsf:library="images/logo" jsf:name="logop.png" class="Footer-logop"/>
+            </figure>
+            <section class="Div-footerMision">
+                <h3 class="H3-footer">MISIÓN</h3>
+                <P class="P-footer">La aplicación busca brindar espacios<br></br> de esparcimiento, confianza, seguridad,<br></br> y satisfacción 
+                    a nuestros clientes, mediante<br></br> una plataforma virtual que le permita <br></br> a los usuarios interactuar de manera 
+                    rápida <br></br> y segura a la hora de ingresar a BingoMiPueblo. </P>
+            </section >
+            <section class="Div-footerVision">
+                <h3 class="H3-footer">VISIÓN</h3>
+                <p class="P-footer">Para el 2024 ser reconocidos a nivel nacional como la<br></br> aplicación de juegos de azar mas seria,<br></br> en terminos de pago, 
+                    plataforma y servicios<br></br>  a nuestros usuarios. <br></br> 
+                    <br></br>
+                    <br></br></p> 
+            </section>
+            <div class="DivIcon-footer">
+                <a href="#" class="icon-tumblr"></a>
+                <a href="#" class="icon-facebook "> </a>
+            </div>
+        </footer>
+    </body>
+</html>

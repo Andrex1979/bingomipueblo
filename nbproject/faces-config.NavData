@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="users/unReg/adm1.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarContraseña.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarNombres.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="users/unReg/registro.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarTelefonoDos.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="users/userReg/confirmacion.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarTelefono.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="admin/listPremio.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarFechaNacimiento.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="users/unReg/comoJugarUnReg.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="users/userReg/game.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="users/userReg/selectGame.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="template.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="users/userReg/selectTable.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarDireccion.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="admin/Edit.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="users/userReg/bienvenido.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="users/userReg/viewSugerencias.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="users/unReg/recuperarContraseña.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="admin/List.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarCorreo.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="users/userReg/sugerencias.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="users/userReg/perfil.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="users/userReg/configuracionPerfil/Dlg_cambiarCiudad.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="users/unReg/comoJugar.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="welcomePrimefaces_1.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="admin/adm.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="admin/Administrador.xhtml" x="1400" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

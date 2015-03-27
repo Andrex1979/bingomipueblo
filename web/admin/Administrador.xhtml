@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head jsf:id="head">
+        <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans' rel='stylesheet' type='text/css'/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+        
+        <title>ADMINISTRADOR </title>
+    </head>
+    <h:body>
+         <header>
+ 
+        </header>
+        <h:form>
+            <input  type="submit" jsf:action="#{usuarioController.prepareList}"  value="Listar Usuario" class="button-Home"/>
+              
+        </h:form>
+        <h:form>
+            <input type="submit" jsf:action="#{usuarioController.prepareadmin}" value="Crear Admin" class="button-Home"/>
+        </h:form>
+        <h:form>
+                
+                <h:button value="Home" outcome="/users/userReg/bienvenido.xhtml" class="button-Home"/> 
+                
+            </h:form>
+        <h:form>
+            <input  type="submit" jsf:action="#{usuarioController.prepareListPremio}"  value="Listar Ganadores" class="button-Home"/>
+              
+        </h:form>
+        <footer>
+           
+        </footer>
+    </h:body>
+</html>
+

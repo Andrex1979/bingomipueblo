@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+        <head jsf:id="head">
+        <link href='https://www.google.com/fonts#UsePlace:use/Collection:Droid+Sans' rel='stylesheet' type='text/css'/>
+        <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+        <h:outputStylesheet name="default.css" library="css"/>
+        <h:outputStylesheet name="cssLayout.css" library="css"/>
+        
+        <title>listPremio </title>
+    </head>
+        <body jsf:id="body">
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="listPremio"/></h1>
+                
+                <p:dataTable  value="#{usuarioController.listaPremios}"  var="item"  >
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="id_premio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idPremio}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre premio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nombrePremio}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="valor premio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.valorPremio}"/>
+                    </p:column>
+                    
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="feha premio ganado"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechaPremioGanado}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="fecha entrega premio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechaEntregaPremio}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="id tipo premio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idTipoPremio}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="id estado premio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idEstadopremio}"/>
+                    </p:column>
+                    
+                   <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="id usuario ganador"/>
+                        </f:facet>
+                       <h:outputText value="#{item.idUsuarioGanador}"/>
+                    </p:column>
+                    
+                   
+                    
+                    
+                </p:dataTable>
+            </h:form>
+        </f:view>
+            <footer class="Footer " >
+           <figure class="Figure-logo">
+            <img jsf:library="images/logo" jsf:name="logop.png" class="Footer-logop"/>
+            </figure>
+            <section class="Div-footerMision">
+                <h3 class="H3-footer">MISIÓN</h3>
+                <P class="P-footer">La aplicación busca brindar espacios<br></br> de esparcimiento, confianza, seguridad,<br></br> y satisfacción 
+                a nuestros clientes, mediante<br></br> una plataforma virtual que le permita <br></br> a los usuarios interactuar de manera 
+                rápida <br></br> y segura a la hora de ingresar a BingoMiPueblo. </P>
+            </section >
+            <section class="Div-footerVision">
+                <h3 class="H3-footer">VISIÓN</h3>
+                <p class="P-footer">Para el 2024 ser reconocidos a nivel nacional como la<br></br> aplicación de juegos de azar mas seria,<br></br> en terminos de pago, 
+                    plataforma y servicios<br></br>  a nuestros usuarios. <br></br> 
+                <br></br>
+                <br></br></p> 
+            </section>
+            <div class="DivIcon-footer">
+            <a href="#" class="icon-tumblr"></a>
+            <a href="#" class="icon-facebook "> </a>
+            </div>
+        </footer>
+
+     </body>
+    
+</html>
+
+
+
